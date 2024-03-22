@@ -4,13 +4,17 @@ from operator import itemgetter
 from typing import List, Optional, Sequence, Tuple
 
 from langchain.callbacks.manager import CallbackManagerForRetrieverRun
-from langchain.chat_models import ChatAnthropic, ChatOpenAI, ChatVertexAI
-from langchain.document_loaders import AsyncHtmlLoader
-from langchain.document_transformers import Html2TextTransformer
-from langchain.embeddings import OpenAIEmbeddings
+from langchain_community.chat_models import ChatVertexAI
+from langchain_openai import ChatOpenAI
+from langchain_anthropic import ChatAnthropic
+from langchain_community.document_loaders import AsyncHtmlLoader
+from langchain_community.document_transformers import Html2TextTransformer
+from langchain_openai import OpenAIEmbeddings
 from langchain.prompts import ChatPromptTemplate, MessagesPlaceholder, PromptTemplate
 from langchain.retrievers import (
     ContextualCompressionRetriever,
+)
+from langchain_community.retrievers import (
     TavilySearchAPIRetriever,
 )
 from langchain.retrievers.document_compressors import (
@@ -35,7 +39,7 @@ from langchain.schema.runnable import (
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 
 # Backup
-from langchain.utilities import GoogleSearchAPIWrapper
+from langchain_community.utilities import GoogleSearchAPIWrapper
 from pydantic import BaseModel, Field
 
 RESPONSE_TEMPLATE = """\
