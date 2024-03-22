@@ -3,6 +3,9 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from langserve import add_routes
 
+import os
+from dotenv import load_dotenv
+load_dotenv()
 
 app = FastAPI()
 app.add_middleware(
